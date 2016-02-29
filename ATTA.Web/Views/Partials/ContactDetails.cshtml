@@ -1,0 +1,28 @@
+﻿@inherits UmbracoTemplatePage
+
+<div class="headline">
+    <h2>@Model.Content.Name</h2>
+</div>
+<ul class="list-unstyled who margin-bottom-30">
+    @{
+        var address = library.ReplaceLineBreaks(CurrentPage.address);
+        var poBox = library.ReplaceLineBreaks(CurrentPage.poBox);
+    }
+    <li>
+        <i class="fa fa-home"></i>
+        <span>@Html.Raw(address)</span>
+    </li>
+    <li>
+        <i class="fa fa-envelope"></i>
+        <span>@Html.Raw(poBox)</span>
+    </li>
+    <li>
+        <i class="fa fa-phone"></i><span>@Umbraco.Field("phone")</span>
+    </li>
+    <li>
+        <i class="fa fa-fax"></i><span>@Umbraco.Field("fax")</span>
+    </li>
+    <li>
+        <i class="fa fa-envelope"></i><span><a href="mailto:@Umbraco.Field("email")">@Umbraco.Field("email")</a></span>
+    </li>
+</ul>

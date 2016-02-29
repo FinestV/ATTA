@@ -1,0 +1,17 @@
+﻿@using ATTA.Utils
+@inherits UmbracoTemplatePage
+@{
+    Layout = "Masterpage.cshtml";
+}
+
+@Html.Partial("Banner")
+<div class="container content">
+    <div class="row">
+        <div class="col-md-3 hidden-sm hidden-xs">
+            @Html.Partial("LeftNavigation")
+        </div>
+        <div class="col-md-9 general-content">
+            @Umbraco.Field("content").WrapHeaders()
+        </div>
+    </div>
+</div>

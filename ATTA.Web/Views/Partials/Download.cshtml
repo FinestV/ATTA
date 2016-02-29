@@ -1,0 +1,22 @@
+﻿@using ATTA.Utils
+@using ATTA.Utils.Models
+@inherits UmbracoTemplatePage
+
+@{
+    var text = library.ReplaceLineBreaks(CurrentPage.text);
+    var downloadLink = Model.Content.GetPropertyValue<IPublishedContent>("downloadLink");
+}
+<div class="purchase row">
+    <div class="col-md-9 animated fadeInLeft">
+        <span>@Model.Content.Name</span>
+        <p>
+            @Html.Raw(text)
+        </p>
+    </div>
+    <div class="col-md-3 btn-buy animated fadeInRight">
+        <a href="@downloadLink.Url" target="_blank" class="btn-u btn-u-lg">
+            <i class="fa fa-cloud-download"></i>
+            Download Now
+        </a>
+    </div>
+</div>

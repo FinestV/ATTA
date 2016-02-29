@@ -1,0 +1,24 @@
+﻿@using ATTA.Utils.Models
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<div class="row margin-bottom-30">
+    <div class="owl-clients-v2">
+        @{
+            if (Model.MacroParameters.ContainsKey("partnersFolder") && !string.IsNullOrEmpty(Model.MacroParameters["partnersFolder"].ToString()))
+            {
+                var sponsorRoot = Umbraco.TypedContent(Model.MacroParameters["partnersFolder"]);
+                var sponsors = sponsorRoot.Children.SelectRecursive(x => x.Children).Where("Visible").Where(x => x.HasValue("partnerImage"));
+                foreach (var sponsor in sponsors)
+                {
+                    var image = sponsor.GetPropertyValue<IPublishedContent>("partnerImage");
+                    var link = new LinkPicker(sponsor.GetPropertyValue<string>("partnerLink"));
+                    <div class="item preview-item">
+                        <a href="@link.Url" title="@sponsor.Name">
+                            <img src="@image.Url" alt="" />
+                        </a>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

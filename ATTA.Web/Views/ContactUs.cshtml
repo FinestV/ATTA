@@ -1,0 +1,14 @@
+﻿@using ATTA.Utils
+@inherits UmbracoTemplatePage
+@{
+    Layout = "Masterpage.cshtml";
+}
+@Html.Partial("Banner")
+
+<div class="map scrolloff">
+    @Html.Raw(Model.Content.GetPropertyValue<string>("googleMapSnippet"))
+</div>
+
+<div class="container content">
+    @Html.GetGridHtml(Model.Content, "content").WrapHeaders()
+</div>

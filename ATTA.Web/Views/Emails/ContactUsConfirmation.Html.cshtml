@@ -1,0 +1,27 @@
+﻿@model ATTA.Utils.Models.ContactUsConfirmationEmail
+
+<html>
+<head>
+    <style>
+        body {
+            color: #555;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #e4e9f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>@Html.EmbedImage("~/assets/img/attamanwebsite-70x92.jpg")Auckland Table Tennis Association</h1>
+
+    <h2>Contact Us Confirmation</h2>
+    <p>Hi @Model.Name,</p>
+    <p>Thanks for your enquiry. We will be in touch.</p>
+    <p>
+        Regards,<br/>
+        The ATTA team
+    </p>
+</body>
+</html>

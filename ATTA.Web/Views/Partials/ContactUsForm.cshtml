@@ -1,0 +1,61 @@
+﻿@using ATTA.Utils
+@inherits UmbracoTemplatePage
+
+<div class="headline">
+    <h2>@Model.Content.Name</h2>
+</div>
+@Umbraco.Field("introText")
+<br/>
+@if (Html.IsEditing())
+{
+    <div id="sky-form3" class="sky-form contact-style">
+        @FormContents()
+    </div>
+}
+else
+{
+    <form id="sky-form3" action="@Url.Action("ContactUs", "Forms")" class="sky-form contact-style">
+        @Html.AntiForgeryToken()
+        @FormContents()
+    </form>
+}
+@helper FormContents()
+{
+    <fieldset class="no-padding">
+        <label>Name <span class="color-red">*</span></label>
+        <div class="row sky-space-20">
+            <div class="col-md-7 col-md-offset-0">
+                <div>
+                    <input type="text" name="name" id="name" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <label>Email <span class="color-red">*</span></label>
+        <div class="row sky-space-20">
+            <div class="col-md-7 col-md-offset-0">
+                <div>
+                    <input type="text" name="email" id="email" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <label>Message <span class="color-red">*</span></label>
+        <div class="row sky-space-20">
+            <div class="col-md-11 col-md-offset-0">
+                <div>
+                    <textarea rows="8" name="message" id="message" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <button type="submit" class="btn-u contactus-btn">Send Message</button>
+        </p>
+    </fieldset>
+
+    <div class="message">
+        <i class="fa fa-smile-o"></i>
+        @Umbraco.Field("confirmationMessage")
+    </div>
+}

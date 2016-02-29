@@ -1,0 +1,14 @@
+﻿@using ATTA.Utils
+@inherits UmbracoTemplatePage
+@{
+    Layout = "Masterpage.cshtml";
+}
+@Html.Partial("banner")
+<div class="container content">
+    @Umbraco.Field("content").WrapHeaders()
+    <div class="row">
+        @Html.GetGridHtml(Model.Content, "partners")
+    </div>
+</div>
+
+

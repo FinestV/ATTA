@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+    var homePage = CurrentPage.Site() as IPublishedContent;
+    var latestPosts = homePage.Descendants().Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation")).OrderByDescending(x => x.UpdateDate).Take(3);
+}
+
+<div class="posts">
+    <div class="headline">
+        <h2>Latest Posts</h2>
+    </div>
+    <ul class="list-unstyled latest-list">
+        @foreach (var item in latestPosts)
+        {
+            <li>
+                <a href="@item.Url">@item.Name</a>
+                <small>@item.UpdateDate.ToString("MMM dd, yyyy")</small>
+            </li>
+        }
+    </ul>
+</div>

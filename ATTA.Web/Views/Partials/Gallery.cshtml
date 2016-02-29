@@ -1,0 +1,33 @@
+﻿@inherits UmbracoTemplatePage
+
+@{
+    var galleryFolder = Model.Content.GetPropertyValue<IPublishedContent>("galleryFolder");
+    if (galleryFolder.Children.Any())
+    {
+        var index = 0;
+        <!-- Gallery -->
+        <div class="container content">
+            <div class="row">
+                @foreach (var mediaItem in galleryFolder.Children)
+                {
+                    <div class="col-md-3 col-sm-6 col-xs-6 noclear-bottom-30">
+                        <a href="@mediaItem.Url" rel="gallery2" class="fancybox img-hover-v1">
+                            <span>
+                                <img class="img-responsive lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                     data-src="@mediaItem.GetCropUrl(345, 230)" alt="@mediaItem">
+                            </span>
+                        </a>
+                    </div>
+                    index++;
+                    if (index%4 == 0)
+                    {
+                        @Html.Raw("</div><div class=\"row\">")
+                    }
+
+                }
+            </div>
+        </div>
+        <!--/ Gallery -->
+    }
+}
+

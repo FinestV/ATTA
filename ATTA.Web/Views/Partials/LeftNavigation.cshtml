@@ -1,0 +1,38 @@
+﻿@inherits UmbracoTemplatePage
+
+@{
+    var leftNavLevel1Items = @Model.Content.AncestorOrSelf(2).Children.Where("Visible");
+}
+<ul class="list-group sidebar-nav-v1 fa-fixed left-nav">
+    @foreach (var level1Item in leftNavLevel1Items)
+    {
+        <li class="list-group-item @IsActive(level1Item) @NavItemHasChildren(level1Item)">
+            <a href="@level1Item.Url" title="@level1Item.Name">@level1Item.Name</a>
+            @if (level1Item.Children.Any())
+            {
+                foreach (var level2Item in level1Item.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation")))
+                {
+                    <ul list-group>
+                        <li class="@IsActive(level2Item)">
+                            <a href="@level2Item.Url" title="@level2Item.Name">
+                                <i class="fa fa-chevron-circle-right"></i>
+                                @level2Item.Name
+                            </a>
+                        </li>
+                    </ul>
+                }
+            }
+        </li>
+    }
+</ul>
+@helper NavItemHasChildren(IPublishedContent item)
+{
+    if (item.Children.Any())
+    {<text>navitem-haschildren</text>}
+}
+
+@helper IsActive(IPublishedContent item)
+{
+    if (item.IsAncestorOrSelf(Model.Content))
+    {<text>active</text>}
+}

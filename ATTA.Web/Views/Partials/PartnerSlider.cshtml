@@ -1,0 +1,32 @@
+﻿@using ATTA.Utils.Models
+@inherits UmbracoTemplatePage
+
+<!-- Our Partners -->
+<div class="container">
+    <div class="headline">
+        <h2>Our Sponsors</h2>
+    </div>
+    <div class="row margin-bottom-30">
+        @{
+            if (Model.Content.HasValue("partnersFolder"))
+            {
+                var sponsorRoot = Model.Content.GetPropertyValue<IPublishedContent>("partnersFolder");
+                var sponsors = sponsorRoot.Children.SelectRecursive(x => x.Children).Where("Visible").Where(x => x.HasValue("partnerImage"));
+                <div class="owl-clients-v2">
+                    @foreach (var sponsor in sponsors)
+                    {
+                        var image = sponsor.GetPropertyValue<IPublishedContent>("partnerImage");
+                        var link = new LinkPicker(sponsor.GetPropertyValue<string>("partnerLink"));
+                        <div class="item">
+                            <a href="@link.Url" title="@sponsor.Name">
+                                <img src="@image.Url" alt="" />
+                            </a>
+                        </div>
+                    }
+                </div>
+
+            }
+        }
+    </div>
+</div>
+<!--/Our Partners End -->

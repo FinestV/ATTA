@@ -1,0 +1,8 @@
+﻿@using ATTA.Utils
+@inherits UmbracoTemplatePage
+@{
+    Layout = "Masterpage.cshtml";
+}
+
+@Html.Partial("Slider")
+@Html.GetGridHtml(Model.Content, "content").WrapHeaders()

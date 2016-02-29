@@ -1,0 +1,7 @@
+﻿{      
+    css: [        
+		'~/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css',
+		'~/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css',
+		'~/assets/css/backoffice.css'
+    ]
+}

@@ -1,0 +1,170 @@
+﻿/* Styles to be applied to the Umbraco backoffice */
+/* Headline */
+.headline {
+    display: block;
+    margin: 10px 0 25px;
+    border-bottom: 1px dotted #e4e9f0;
+}
+.headline h2 {
+    margin: 0 0 -2px 0;
+    display: inline-block;
+    border-bottom: 2px solid #4765a0;
+}
+/* Headline end */
+/* Promos */
+.preview-img {
+    max-width: 100% !important;
+}
+.usky-grid .fullSizeImage {
+    width: auto !important;
+    max-width: 100% !important;
+}
+/* Promos End*/
+/* Sponsors */
+.owl-clients-v2 .item {
+    width: 234px;
+    display: inline-block;
+}
+.owl-clients-v2 .item a {
+    padding: 20px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.owl-clients-v2 .item a:hover {
+    -transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+.owl-clients-v2 .item img {
+    max-width: 100%;
+}
+/* Sponsors End*/
+/* Button Styles */
+.btn {
+   box-shadow: none;
+   border-radius: 0;
+}
+.btn-u {
+   border: 0;
+   color: #fff;
+   font-size: 14px;
+   cursor: pointer;
+   font-weight: 400;
+   padding: 6px 13px;
+   position: relative;
+   background: #4765a0;
+   white-space: nowrap;
+   display: inline-block;
+   text-decoration: none;
+}
+.btn-u:hover {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-u.btn-block {
+  text-align: center;
+}
+/* Button Styles End */
+/* Forms */
+.sky-form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.sky-form label {
+    padding: 0;
+}
+/* Forms End */
+/* Contact Us */
+.who {
+    text-align:left !important;
+}
+.who li {
+    float:left !important;
+    width:100% !important;
+}
+.who li i {
+    color: #4765a0 !important;
+    font-size:13px !important;
+    line-height:inherit !important;
+    min-width:15px;
+    margin-right:8px;
+    text-align:center;
+    position:relative;
+    float:left;
+}
+.who li span {
+    float:left !important;
+    font-size:13px !important;
+}
+/* Contact Us End */
+/* Download */
+.purchase {
+    padding:0 0 30px;
+    margin-bottom:25px;
+    border-bottom:1px solid #eee;
+    background:0;
+}
+.purchase .btn-buy {
+    text-align:center;
+}
+.purchase span {
+    color:#666;
+    font-size:24px;
+    line-height:35px;
+}
+.purchase p {
+    margin-bottom:0;
+}
+.purchase .col-md-3 {
+    float:left;
+    width:25%;
+}
+.purchase .col-md-9 {
+    float:left;
+    width:75%;
+}
+/* Download End */
+/* Btn */
+.btn-u {
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 6px 13px;
+    position: relative;
+    background: #4765a0;
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+}
+.btn-u-lg {
+    font-size: 18px;
+    padding: 10px 25px;
+}
+.usky-grid .usky-editor-placeholder .btn-u-lg i {
+    font-size:18px;
+    display:inline-block;
+    margin-bottom:0;
+    line-height:inherit;
+    color:#fff;
+}
+/* Btn End*/
+/* Footer */
+.usky-grid .usky-editor-placeholder i.fa-angle-right {
+    float: right;
+    font-size: 13px;
+    line-height: inherit;
+    color: #000;
+    margin-bottom: 0;
+}
+/* Footer end */

@@ -1,0 +1,40 @@
+﻿@using ATTA.Utils
+@using ATTA.Utils.Models
+@inherits UmbracoViewPage
+
+@{
+    var imageUrl = Model.GetPropertyValue<IPublishedContent>("ctaImage").Url;
+    var link = new LinkPicker(Model.GetPropertyValue<string>("ctaLink"));
+}
+
+<div class="thumbnails thumbnail-style thumbnail-kenburn">
+    <div class="thumbnail-img">
+        <div class="overflow-hidden">
+            <img class="img-responsive @PreviewImg()" src="@imageUrl" alt="">
+        </div>
+        @if (!Html.IsEditing() && !string.IsNullOrEmpty(link.Url))
+        {
+            <a class="btn-more hover-effect" href="@link.Url">read more +</a>
+        }
+    </div>
+    <div class="caption">
+        <h3>
+            @if (!string.IsNullOrEmpty(link.Url))
+            {
+                <a class="hover-effect" href="@link.Url">@Umbraco.Field("ctaTitle")</a>
+            }
+            else
+            {
+                @Umbraco.Field("ctaTitle")
+            }
+        </h3>
+        <p>@Umbraco.Field("ctaText")</p>
+    </div>
+</div>
+@helper PreviewImg()
+{
+    if (Html.IsEditing())
+    {
+        @:preview-img    
+    }
+}

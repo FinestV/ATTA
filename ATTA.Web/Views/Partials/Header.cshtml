@@ -1,0 +1,104 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    var homePage = CurrentPage.Site() as IPublishedContent;
+    if (homePage != null)
+    {
+        <!--=== Header ===-->
+        <div class="header">
+            <div class="container">
+                <a href="/" class="logo">
+                    <img src="@(homePage.GetPropertyValue<IPublishedContent>("headerLogo").Url)"/>
+                </a>
+                <div class="topbar text-right">
+                    <div class="fb-like" data-href="https://www.facebook.com/Auckland-Table-Tennis-Association-241612742550108/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+                <div class="container">
+                    <ul class="nav navbar-nav">
+                        <!-- Primary Navigation -->
+                        @* Level 1 *@
+                        @{ var level1Pages = homePage.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation")); }
+                        @foreach (var level1Page in level1Pages)
+                        {
+                            <li class="@IsActive(level1Page) @IsDropDown(level1Page)">
+                                <a href="@level1Page.Url" @IsDropDownLinkOrDisabled(level1Page)>@level1Page.Name</a>
+                                @* Level 2 *@
+                                @{var level2Pages = level1Page.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation"));}
+                                @if (level2Pages.Any())
+                                {
+                                    <ul class="dropdown-menu">
+                                        @foreach (var level2Page in level2Pages)
+                                        {
+                                            <li class="@IsActive(level2Page) @IsDropDownSubMenu(level2Page)">
+                                                <a href="@level2Page.Url" class="dropdown-toggle">@level2Page.Name</a>
+                                                @* Level 3 *@
+                                                @{ var level3Pages = level2Page.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation"));}
+                                                @if (level3Pages.Any())
+                                                {
+                                                    <ul class="dropdown-menu">
+                                                        @foreach (var level3Page in level3Pages)
+                                                        {
+                                                            <li class="@IsActive(level3Page)">
+                                                                <a href="@level3Page.Url">@level3Page.Name</a>
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                }
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </li>
+                        }
+                        <!-- End Primary Navigation -->
+                        @*<!-- Search Block -->
+                        <li>
+                            <i class="search fa fa-search search-btn"></i>
+                            <div class="search-open">
+                                <div class="input-group animated fadeInDown">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button class="btn-u" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- End Search Block -->*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--=== End Header ===-->
+    }
+}
+
+@helper IsActive(dynamic item)
+{
+    if(item.IsAncestorOrSelf(CurrentPage))
+    {<text>active</text>}
+}
+@helper IsDropDown(IPublishedContent item)
+{
+    if (item.Children.Where("Visible").Any())
+    {<text>dropdown</text>}
+}
+@helper IsDropDownSubMenu(IPublishedContent item)
+{
+    if (item.Children.Where("Visible").Any())
+    {<text>dropdown-submenu</text>}
+}
+@helper IsDropDownLinkOrDisabled(IPublishedContent item)
+{
+    if (item.Children.Where("Visible").Any())
+    {<text>class="dropdown-toggle" data-toggle="dropdown"</text>}
+    else if (item.TemplateId == 0)
+    {<text>class="disabled"</text>}
+}
+
+

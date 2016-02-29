@@ -1,0 +1,18 @@
+﻿@inherits UmbracoTemplatePage
+
+@if (Model.Content.HasValue("bannerImage") && Model.Content.HasValue("pageTitle"))
+{
+    var bannerImage = Model.Content.GetPropertyValue<IPublishedContent>("bannerImage");
+    <div class="banner-image" style="background-image: url(@bannerImage.Url)">
+        <div class="container">
+            <h1>@Umbraco.Field("pageTitle")</h1>
+        </div>
+    </div>
+}
+else if (Model.Content.HasValue("pageTitle"))
+{
+    <div class="container">
+        <h1>@Umbraco.Field("pageTitle")</h1>
+    </div>
+    
+}

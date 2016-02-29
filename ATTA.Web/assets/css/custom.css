@@ -1,0 +1,235 @@
+/* Add here all your css styles (customizations) */
+ul {
+    padding-left: 18px;
+}
+.noclear-bottom-30 {
+    margin-bottom: 30px;
+}
+.scrolloff iframe {
+    pointer-events: none;
+}
+/* Header */
+.header .navbar-toggle {
+    margin-top: -6px;
+}
+.header .nav>li {
+    position: relative !important;
+    float: right;
+}
+.header>.container {
+    margin-bottom: -90px;
+}
+/* Header End */
+/* Facebook */
+@media (min-width: 990px) {
+    .topbar .fb-like {
+        margin-right: 30px;
+    }
+}
+.fb-footer {
+    text-align:right;
+}
+@media (max-width: 991px) {
+    .fb-footer {
+        text-align: left;
+    }
+}
+/* Facebook End */
+/* Owl Slider */
+.owl-clients-v2 img {
+    width: 100%;
+}
+.owl-clients-v2 .item a {
+    padding: 20px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.owl-clients-v2 .item a:hover {
+    -transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+/* Owl Slider End*/
+
+/* Parallax Slider */
+.da-slider {
+    background-image: none;
+}
+.da-slide h2, .da-slide p {
+    position: static;
+    margin-left: 0 !important;
+}
+.da-text {    
+    top: 100px;
+    z-index: 10;
+}
+.da-slide-toleft .da-text, .da-slide-toright .da-text, .da-slide-current .da-text {
+    position: absolute;
+}
+.da-slide .da-text {
+    left: 10%;
+    opacity: 1;
+    width: auto;
+    height: auto;
+}
+.da-slide-fromright .da-text {
+	-webkit-animation: fromRightAnim1 0.6s ease-in 0.8s both;
+	-moz-animation: fromRightAnim1 0.6s ease-in 0.8s both;
+	-o-animation: fromRightAnim1 0.6s ease-in 0.8s both;
+	-ms-animation: fromRightAnim1 0.6s ease-in 0.8s both;
+	animation: fromRightAnim1 0.6s ease-in 0.8s both;
+}
+.da-slide-fromleft .da-text {
+	-webkit-animation: fromLeftAnim1 0.6s ease-in 0.6s both;
+	-moz-animation: fromLeftAnim1 0.6s ease-in 0.6s both;
+	-o-animation: fromLeftAnim1 0.6s ease-in 0.6s both;
+	-ms-animation: fromLeftAnim1 0.6s ease-in 0.6s both;
+	animation: fromLeftAnim1 0.6s ease-in 0.6s both;
+}
+.da-slide-toright .da-text{
+	-webkit-animation: toRightAnim1 0.6s ease-in 0.6s both;
+	-moz-animation: toRightAnim1 0.6s ease-in 0.6s both;
+	-o-animation: toRightAnim1 0.6s ease-in 0.6s both;
+	-ms-animation: toRightAnim1 0.6s ease-in 0.6s both;
+	animation: toRightAnim1 0.6s ease-in 0.6s both;
+}
+.da-slide-toleft .da-text{
+	-webkit-animation: toLeftAnim1 0.6s ease-in both;
+	-moz-animation: toLeftAnim1 0.6s ease-in both;
+	-o-animation: toLeftAnim1 0.6s ease-in both;
+	-ms-animation: toLeftAnim1 0.6s ease-in both;
+	animation: toLeftAnim1 0.6s ease-in both;
+}
+@media (min-width: 1440px) {
+    .da-slide .da-text {
+        margin-left: 3%;
+    }
+}
+@media (min-width: 1680px) {
+    .da-slide .da-text {
+        margin-left: 7%;
+    }
+}
+@media (min-width: 1920px) {
+    .da-slide .da-text {
+        margin-left: 12%;
+    }
+}
+@media (max-width: 450px) {
+    .da-slide h2 i {
+        font-size: 30px;
+    }
+}
+.da-linktocontent {
+    font-family: 'Open Sans', sans-serif;
+}
+/* Parallax Slider End */
+/* Left Nav */
+.left-nav.affix {
+    top: 100px;
+}
+.left-nav li:after {
+    top: 7px;
+    right: 10px;
+    color: #777;
+    font-size: 14px;
+    content: "\f105";
+    position: absolute;
+    font-weight: normal;
+    display: inline-block;
+    font-family: FontAwesome;
+}
+.left-nav li.active:after {
+    color: #fff0f5;
+}
+.left-nav li.active a:hover {
+    background-color: transparent;
+}
+.left-nav li a:hover, .left-nav li ul a:hover, .left-nav li.active ul a:hover, .left-nav li.active ul li.active a {
+    background-color: #d8d8d8;
+}
+/* Left Nav End */
+/* Article Page/General Page */
+.breadcrumbs-v1 {
+    background-image: none;
+}
+.banner-image {
+    z-index: 1;
+    position: relative;
+    padding: 250px 0 10px;
+    background-size: cover;
+    background-position: center center;
+}
+.banner-image:after {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    position: absolute;
+    background: rgba(0,0,0,0.2)
+}
+.banner-image h1 {
+    color: #fff;
+}
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 60px;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .banner-image {
+        padding: 100px 0 10px;
+    }
+    h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .content {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+}
+/* Article Page/General Page End */
+/* Contact Us*/
+.sky-form .message i {
+    border-radius: inherit;
+    border: 0;
+    font-size: 80px;
+}
+.who li {
+    float: left;
+    width: 100%;
+}
+.who li i {
+    float: left;
+}
+.who li span {
+    float: left;
+}
+.btn-u.disabled {
+    background: #999;
+}
+/* Contact Us End*/
+/* Partner List */
+.partner-list-item {
+    min-height: 100px;
+}
+.partner-list-item img {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Partner List End */
+/* Download */
+.purchase {
+    padding: 0 0 30px;
+    margin-bottom: 25px;
+    background: 0;
+}
+/* Download End*/

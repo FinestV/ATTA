@@ -1,0 +1,24 @@
+﻿@inherits UmbracoViewPage
+
+@{
+    var links = Model.GetPropertyValue<RelatedLinks>("links");
+    if (links.Any())
+    {
+        <div class="headline">
+            <h2>@Model.Name</h2>
+        </div>
+        <ul class="list-unstyled link-list">
+            @foreach (var item in links)
+            {
+                var linkTarget = item.NewWindow ? "target=\"_blank\"" : string.Empty;
+                <li>
+                    <a href="@item.Link" @Html.Raw(linkTarget)>@item.Caption</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+            }
+        </ul>
+    }
+}
+    
+
+

@@ -1,0 +1,35 @@
+﻿@using ATTA.Utils
+@using ATTA.Utils.Models
+@inherits UmbracoTemplatePage
+
+@{
+    var sliderItems = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("sliderItems").ToList();
+    if (sliderItems.Any())
+    {
+        <!--slider-->
+        <div class="slider-inner">
+            <div id="da-slider" class="da-slider" style="background-image:url(@(CurrentPage.sliderBackgroundImage.Url))">
+                @foreach (var sliderItem in sliderItems)
+                {
+                    <div class="da-slide">
+                        <div class="da-text">
+                            @Umbraco.Field(sliderItem, "text").InjectITags()
+                            @if (sliderItem.HasValue("linkToContent"))
+                            {
+                                var linkToContent = new LinkPicker(sliderItem.GetPropertyValue<string>("linkToContent"));
+                                <a class="btn-u da-linktocontent" title="@linkToContent.Name" href="@linkToContent.Url">Read More</a>
+                            }
+                        </div>
+                        <div class="da-img">
+                            @Umbraco.Field(sliderItem, "videoOrImage").RemoveFirstParagraphTag()
+                        </div>
+                    </div>
+                }
+                <div class="da-arrows">
+                    <span class="da-arrows-prev"></span>
+                    <span class="da-arrows-next"></span>
+                </div>
+            </div>
+        </div><!--/slider-->
+    }
+}

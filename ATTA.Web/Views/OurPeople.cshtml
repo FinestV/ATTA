@@ -1,0 +1,25 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "Masterpage.cshtml";
+}
+@Html.Partial("Banner")
+<div class="container content">
+    <div class="row team-v6">
+        @{
+            if (Model.Content.HasValue("peopleFolder"))
+            {
+                var peopleFolder = Model.Content.GetPropertyValue<IPublishedContent>("peopleFolder");
+                var people = peopleFolder.Children.SelectRecursive(x => x.Children).Where("Visible").Where(x => x.HasValue("image"));
+                foreach (var person in people)
+                {
+                    var image = person.GetPropertyValue<IPublishedContent>("image");
+                    <div class="col-md-3 col-sm-6 md-margin-bottom-40">
+                        <img class="img-responsive lazyload" src="@image.Url" alt="">
+                        <span>@Umbraco.Field(person, "name")</span>
+                        <small>@Umbraco.Field(person, "role")</small>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

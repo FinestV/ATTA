@@ -1,0 +1,36 @@
+﻿@using ATTA.Utils.Models
+@inherits UmbracoTemplatePage
+
+<div class="headline">
+    <h2>@Model.Content.Name</h2>
+</div>
+@{
+    var partnersFolder = Model.Content.GetPropertyValue<IPublishedContent>("partnersFolder");
+    var partners = partnersFolder.Children.SelectRecursive(x => x.Children).Where("Visible").Where(x => x.HasValue("partnerImage"));
+    if (partners.Any())
+    {
+        var index = 0;
+        <!-- Our Partners -->
+        <div class="container">
+            <div class="row">
+                @foreach (var partner in partners)
+                {
+                    var image = partner.GetPropertyValue<IPublishedContent>("partnerImage");
+                    var link = new LinkPicker(partner.GetPropertyValue<string>("partnerLink"));
+                    <div class="col-md-3 col-sm-6 col-xs-12 noclear-bottom-30 partner-list-item">
+                        <a href="@link.Url" class="img-hover-v1">
+                            <img class="img-responsive" src="@image.Url" alt=""/>
+                        </a>
+                    </div>
+                    index++;
+                    if (index % 4 == 0)
+                    {
+                        @Html.Raw("</div><div class=\"row\">")
+                    }
+
+                }
+            </div>
+        </div>
+        <!--/Our Partners End -->
+    }
+}
