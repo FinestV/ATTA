@@ -19,6 +19,7 @@ namespace ATTA.Utils
         {
             return field.ToString().InjectITags();
         }
+		// Make the homepage slider pretty...
         public static MvcHtmlString InjectITags(this string field)
         {
             var doc = new HtmlDocument();
@@ -55,6 +56,8 @@ namespace ATTA.Utils
         {
             return field.ToString().WrapHeaders();
         }
+		// Some hax to get the header styles working for rich text
+		// Style relies on container div
         public static MvcHtmlString WrapHeaders(this string field)
         {
             //check for <h2> with no <div class="headline"> look around

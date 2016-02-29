@@ -12,16 +12,23 @@ ul {
 .header .navbar-toggle {
     margin-top: -6px;
 }
-.header .nav>li {
-    position: relative !important;
-    float: right;
+
+@media (min-width: 992px) {
+	.header .navbar-nav {
+		padding-left: 80px;
+	}
+	.wrapper .header .nav>li {
+		position: relative;
+		float: right;
+	}
+	.header>.container {
+		margin-bottom: -90px;
+	}
 }
-.header>.container {
-    margin-bottom: -90px;
-}
+
 /* Header End */
 /* Facebook */
-@media (min-width: 990px) {
+@media (min-width: 992px) {
     .topbar .fb-like {
         margin-right: 30px;
     }
@@ -29,7 +36,7 @@ ul {
 .fb-footer {
     text-align:right;
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     .fb-footer {
         text-align: left;
     }
