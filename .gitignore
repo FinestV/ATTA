@@ -61,14 +61,6 @@ artifacts/
 *.tmp
 *.tmp_proj
 *.log
-
-#temp files
-**App_Data/NuGetBackup
-**App_Data/cache
-**App_Data/logs
-**App_Data/packages
-**App_Data/preview
-**App_Data/TEMP
 *.vspscc
 *.vssscc
 .builds
@@ -85,7 +77,7 @@ ipch/
 *.ncb
 *.opendb
 *.opensdf
-*.sdf
+#s*.sdf
 *.cachefile
 
 # Visual Studio profiler
@@ -242,3 +234,11 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+#temp files
+ATTA.Web/App_Data/NuGetBackup/
+ATTA.Web/App_Data/cache/
+ATTA.Web/App_Data/logs/
+ATTA.Web/App_Data/packages/
+ATTA.Web/App_Data/preview/
+ATTA.Web/App_Data/TEMP/
