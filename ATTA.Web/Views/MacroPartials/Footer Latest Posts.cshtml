@@ -5,7 +5,7 @@
     var latestPosts = homePage.Descendants().Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation")).OrderByDescending(x => x.UpdateDate).Take(3);
 }
 
-<div class="posts">
+<div class="posts md-margin-bottom-40">
     <div class="headline">
         <h2>Latest Posts</h2>
     </div>
