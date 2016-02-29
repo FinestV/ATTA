@@ -61,6 +61,14 @@ artifacts/
 *.tmp
 *.tmp_proj
 *.log
+
+#temp files
+**App_Data/NuGetBackup
+**App_Data/cache
+**App_Data/logs
+**App_Data/packages
+**App_Data/preview
+**App_Data/TEMP
 *.vspscc
 *.vssscc
 .builds
