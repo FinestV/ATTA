@@ -25,7 +25,6 @@ ul {
 	}
 	.wrapper .header .nav>li {
 		position: relative;
-		float: right;
 	}
 	.header>.container {
 		margin-bottom: -90px;
