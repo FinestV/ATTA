@@ -36,7 +36,7 @@
                                         @foreach (var level2Page in level2Pages)
                                         {
                                             <li class="@IsActive(level2Page) @IsDropDownSubMenu(level2Page)">
-                                                <a href="@level2Page.Url" class="dropdown-toggle">@level2Page.Name</a>
+                                                <a href="@level2Page.Url" @DisableNoTemplate(level2Page)>@level2Page.Name</a>
                                                 @* Level 3 *@
                                                 @{ var level3Pages = level2Page.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation"));}
                                                 @if (level3Pages.Any())
@@ -99,6 +99,11 @@
     {<text>class="dropdown-toggle" data-toggle="dropdown"</text>}
     else if (item.TemplateId == 0)
     {<text>class="disabled"</text>}
+}
+@helper DisableNoTemplate(IPublishedContent item)
+{
+	if (item.TemplateId == 0)
+	{<text>class="disabled"</text>}
 }
 
 
