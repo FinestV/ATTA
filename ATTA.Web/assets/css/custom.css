@@ -15,7 +15,9 @@ ul {
 .header .navbar-toggle {
 	margin: -6px 0 0 20px;
 }
-
+.header .logo img {
+	width: 70px;
+}
 @media (min-width: 992px) {
 	.header .topbar {
 		padding-top: 8px;
