@@ -9,11 +9,17 @@ ul {
     pointer-events: none;
 }
 /* Header */
+.header .topbar {
+	padding: 20px 0 0;
+}
 .header .navbar-toggle {
-    margin-top: -6px;
+	margin: -6px 0 0 20px;
 }
 
 @media (min-width: 992px) {
+	.header .topbar {
+		padding-top: 8px;
+	}
 	.header .navbar-nav {
 		padding-left: 80px;
 	}
