@@ -5,7 +5,7 @@
 	"render": "/App_Plugins/DocTypeGridEditor/Render/DocTypeGridEditor.cshtml",
 	"icon": "icon-item-arrangement",
 	"config": {
-	    "allowedDocTypes": ["CallToAction", "ContactDetails", "ContactUsForm", "Download", "FooterContactUs", "FooterLinkList", "PartnerList"],
+	    "allowedDocTypes": ["CallToAction", "ContactDetails", "ContactUsForm", "Download", "FooterContactUs", "FooterLinkList", "PartnerList$"],
         "enablePreview": true,
         "viewPath": "/Views/Partials/"
 	}
