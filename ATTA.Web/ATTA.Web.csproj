@@ -483,6 +483,7 @@
     <Content Include="Views\Emails\ContactUsNotification.cshtml" />
     <Content Include="Views\Emails\ContactUsNotification.Html.cshtml" />
     <Content Include="Views\Emails\ContactUsNotification.Text.cshtml" />
+    <Content Include="Views\Partials\GoogleAnalytics.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
