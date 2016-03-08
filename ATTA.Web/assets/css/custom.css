@@ -1,4 +1,10 @@
 /* Add here all your css styles (customizations) */
+/* Make all images responsive by default */
+img {
+	display: block;
+    height: auto;
+    max-width: 100%;
+}
 ul {
     padding-left: 18px;
 }
@@ -205,8 +211,8 @@ h1 {
         font-size: 30px;
         line-height: 40px;
     }
-    .content {
-        padding-top: 0;
+    .general-content {
+        padding-top: 15px;
         padding-bottom: 20px;
     }
 }
