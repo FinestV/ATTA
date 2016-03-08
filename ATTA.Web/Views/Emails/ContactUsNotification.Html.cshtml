@@ -3,29 +3,28 @@
 <html>
 <head>
     <style>
-        body {
-            color: #555;
-            font-family: 'Open Sans', Arial, sans-serif;
-        }
-
-        h1 {
+        h1, h2, h4 {
             text-align: center;
-            border-bottom: 2px solid #e4e9f0;
         }
+		h1, h2, h3, p {
+			color: #555;
+			font-family: 'Open Sans', Arial, sans-serif;
+		}
     </style>
 </head>
 <body>
-<h1>@Html.EmbedImage("~/assets/img/attamanwebsite-70x92.jpg")Auckland Table Tennis Association</h1>
+	<h4>@Html.EmbedImage("~/assets/img/email-icon-120x120.png")</h4>
+	<h1>Auckland Table Tennis Association</h1>
 
-<h2>Contact Us Notification</h2>
+	<h2>Contact Us Notification</h2>
 
-<h3>Name</h3>
-<p>@Model.Name</p>
+	<h3>Name</h3>
+	<p>@Model.Name</p>
 
-<h3>Email</h3>
-<p>@Model.Email</p>
+	<h3>Email</h3>
+	<p>@Model.Email</p>
 
-<h3>Message</h3>
-<p>@Model.Message</p>
+	<h3>Message</h3>
+	<p>@Model.Message</p>
 </body>
 </html>
