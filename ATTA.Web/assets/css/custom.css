@@ -178,11 +178,10 @@ ul {
     background-image: none;
 }
 .banner-image {
-    z-index: 1;
+	z-index: 1;
     position: relative;
-    padding: 250px 0 10px;
-    background-size: cover;
-    background-position: center center;
+	background-size: cover;
+	background-position: center center;
 }
 .banner-image:after {
     top: 0;
@@ -194,8 +193,14 @@ ul {
     position: absolute;
     background: rgba(0,0,0,0.2)
 }
-.banner-image h1 {
-    color: #fff;
+.banner-image>.container {
+	height: 180px;
+	position: relative;
+}
+.banner-image>.container>h1 {
+	position: absolute;
+	bottom: 10px;
+	color: #fff0f5;
 }
 h1 {
     font-size: 50px;
@@ -204,16 +209,16 @@ h1 {
     margin-top: 20px;
 }
 @media (max-width: 768px) {
-    .banner-image {
-        padding: 100px 0 10px;
-    }
+	.banner-image>.container {
+		height: 120px;
+	}
     h1 {
         font-size: 30px;
         line-height: 40px;
     }
     .general-content {
         padding-top: 15px;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
     }
 }
 /* Article Page/General Page End */
