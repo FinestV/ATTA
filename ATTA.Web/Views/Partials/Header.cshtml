@@ -21,29 +21,27 @@
 			<div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
 				<div class="container">
 					<ul class="nav navbar-nav">
+						<li class="@IsCurrentItem(homePage)">
+							<a href="/">Home</a>
+						</li>
 						<!-- Primary Navigation -->
 						@* Level 1 *@
 						@{ var level1Pages = homePage.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation")); }
-						@foreach (var level1Page in level1Pages)
-						{
+						@foreach (var level1Page in level1Pages) {
 							<li class="@IsActive(level1Page) @IsDropDown(level1Page)">
 								<a href="@level1Page.Url" @IsDropDownLinkOrDisabled(level1Page)>@level1Page.Name</a>
 								@* Level 2 *@
 								@{var level2Pages = level1Page.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation"));}
-								@if (level2Pages.Any())
-								{
+								@if (level2Pages.Any()) {
 									<ul class="dropdown-menu">
-										@foreach (var level2Page in level2Pages)
-										{
+										@foreach (var level2Page in level2Pages) {
 											<li class="@IsActive(level2Page) @IsDropDownSubMenu(level2Page)">
 												<a href="@level2Page.Url" @DisableNoTemplate(level2Page)>@level2Page.Name</a>
 												@* Level 3 *@
 												@{ var level3Pages = level2Page.Children.Where("Visible").Where(x => !x.GetPropertyValue<bool>("hideFromNavigation"));}
-												@if (level3Pages.Any())
-												{
+												@if (level3Pages.Any()) {
 													<ul class="dropdown-menu">
-														@foreach (var level3Page in level3Pages)
-														{
+														@foreach (var level3Page in level3Pages) {
 															<li class="@IsActive(level3Page)">
 																<a href="@level3Page.Url">@level3Page.Name</a>
 															</li>
@@ -51,11 +49,11 @@
 													</ul>
 												}
 											</li>
-													}
+										}
 									</ul>
-													}
+								}
 							</li>
-													}
+						}
 						<!-- End Primary Navigation -->
 						@*<!-- Search Block -->
 							<li>
@@ -105,5 +103,8 @@ else if (item.TemplateId == 0)
 	if (item.TemplateId == 0)
 	{<text>class="disabled"</text>}
 }
-
-
+@helper IsCurrentItem(IPublishedContent item)
+{
+	if (item.IsEqual(CurrentPage as IPublishedContent))
+	{<text>active</text>}
+}
