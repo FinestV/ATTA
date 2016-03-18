@@ -7,17 +7,6 @@ namespace ATTA.Web.Controllers
 {
     public class FormsController : SurfaceController
     {
-        //[HttpPost]
-        //public ActionResult ContactUs(ContactUsViewModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var contactUsMailer = new ContactUsMailer(model);
-        //        contactUsMailer.AutoRespond();
-        //        contactUsMailer.Notify();
-        //    }
-        //    return new JsonResult();
-        //}
         [HttpPost]
         public ActionResult ContactUs(ContactUsViewModel model)
         {
