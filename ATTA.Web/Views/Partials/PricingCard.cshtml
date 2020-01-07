@@ -1,0 +1,29 @@
+﻿@using ATTA.Utils.Models
+@inherits UmbracoViewPage
+
+@{
+	var link = new LinkPicker(Model.GetPropertyValue<string>("link"));
+	var colour = Model.GetPropertyValue<string>("colour");
+}
+
+<div class="pricing-table-v8 @GetColour(colour) margin-bottom-30">
+	<div class="service-block ">
+		<h2 class="heading-md">@Model.Name</h2>
+		<span><i class="dollar">$</i>@Umbraco.Field("amount")<i>@Umbraco.Field("frequency")</i></span>
+		<p>@library.ReplaceLineBreaks(Umbraco.Field("text").ToString())</p>
+		<a href="@link.Url" target="@link.Target" class="btn-u btn-brd btn-u ">@link.Name</a>
+	</div>
+</div>
+
+@helper GetColour(string colour)
+{
+if(colour == "Red") {
+	@:service-block-red 
+}
+else if (colour == "Dark Grey") {
+	@:service-block-dark 
+}
+else {
+	@:service-block-dark-blue
+}
+}

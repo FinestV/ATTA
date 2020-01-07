@@ -70,5 +70,21 @@ namespace ATTA.Utils
 
             return MvcHtmlString.Create(field);
         }
+
+	    public static MvcHtmlString MakeTablesResponsive(this MvcHtmlString field)
+	    {
+		    return field.ToString().MakeTablesResponsive();
+	    }
+
+	    public static MvcHtmlString MakeTablesResponsive(this string field)
+	    {
+		    var startTable = new Regex("<table", RegexOptions.Singleline);
+		    field = startTable.Replace(field, "<div class=\"table-responsive\"><table");
+
+			var endTable = new Regex("</table>", RegexOptions.Singleline);
+		    field = endTable.Replace(field, "</table></div>");
+
+			return MvcHtmlString.Create(field);
+	    }
     }
 }

@@ -1,0 +1,24 @@
+﻿@using ATTA.Utils
+@using ATTA.Utils.Models
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<div class="seekapong-wrapper row">
+    <div class="col-xs-12">
+        <i class="fa fa-cloud-download seekapong-icon"></i>
+        <h3 class="seekapong-header">
+            @Umbraco.Field("header")
+        </h3>
+        <div class="seekapong-badges">
+            <div class="seekapong-badge">
+                <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/au/app/seekapong/id1462275055">
+                    <img class="seekapong-applestore-badge" alt="Download on the App store" src="/assets/img/apple-badge.png"/>
+                </a>
+            </div>
+            <div class="seekapong-badge">
+                <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.attacustomer&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+                    <img class="seekapong-playstore-badge" alt="Get it on Google Play" src="/assets/img/google-play-badge.png"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -168,3 +168,59 @@
     margin-bottom: 0;
 }
 /* Footer end */
+/* Pricing Cards*/
+.pricing-table-v8 {
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	padding-bottom:12px;
+}
+.pricing-table-v8 h2 {
+	background-color: rgba(0,0,0, 0.2);
+}
+.pricing-table-v8 .service-block i {
+	font-size: 16px;
+	display: inline;
+	line-height: inherit;
+}
+.service-block-dark-blue {
+	background-color: #4765a0;
+}
+.service-block-red {
+	background-color: #e74c3c;
+}
+.service-block-dark {
+	background-color: #555;
+}
+.btn-brd {
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+/* Pricing Cards End*/
+/* Seekapong Start */
+.seekapong-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 6px 0 30px;
+    border-bottom: 1px dotted #e4e9f0;
+}
+.seekapong-icon {
+    font-size: 48px;
+    margin-bottom: 4px;
+    color: #324c80;
+}
+.seekapong-header {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.seekapong-badge {
+    display: inline-block;
+    width: 236px;
+    padding: 0 18px;
+}
+.seekapong-badge .seekapong-applestore-badge,
+.seekapong-badge .seekapong-playstore-badge {
+    max-width: 200px;
+}
+/* Seekapong End */

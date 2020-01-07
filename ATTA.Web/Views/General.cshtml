@@ -6,7 +6,7 @@
 @Html.Partial("Banner")
 <div class="container content general-content">
     <div class="row">
-        @Html.GetGridHtml(Model.Content, "content").WrapHeaders()
+        @Html.GetGridHtml(Model.Content, "content").WrapHeaders().MakeTablesResponsive()
     </div>
 </div>
 @helper GetBannerImage()

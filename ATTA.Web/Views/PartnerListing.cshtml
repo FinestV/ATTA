@@ -5,7 +5,7 @@
 }
 @Html.Partial("banner")
 <div class="container content">
-    @Umbraco.Field("content").WrapHeaders()
+    @Umbraco.Field("content").WrapHeaders().MakeTablesResponsive()
     <div class="row">
         @Html.GetGridHtml(Model.Content, "partners")
     </div>

@@ -8,15 +8,16 @@ var ParallaxSlider = function () {
 			    current     : 0,    
 			    // index of current slide
 			     
-			    bgincrement : 50,  
+			    bgincrement : 0,  
 			    // increment the background position 
 			    // (parallax effect) when sliding
 			     
 			    autoplay    : false,
 			    // slideshow on / off
 			     
-			    interval    : 4000  
-			    // time between transitions
+			    interval: 4000,
+				// time between transitions
+
 			});
         },
 

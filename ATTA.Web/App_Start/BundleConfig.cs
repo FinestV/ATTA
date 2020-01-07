@@ -41,6 +41,7 @@ namespace ATTA.Web
                                                          .Include("~/assets/css/style.css", new CssRewriteUrlTransform())
                                                          .Include("~/assets/css/headers/header-default.css")
                                                          .Include("~/assets/css/footers/footer-v1.css", new CssRewriteUrlTransform())
+														 .Include("~/assets/css/pricing_v8.css", new CssRewriteUrlTransform())
                                                          .Include("~/assets/plugins/animate.css")
                                                          .Include("~/assets/plugins/line-icons/line-icons.css")
                                                          .Include("~/assets/plugins/font-awesome/css/font-awesome.min.css", new CssRewriteUrlTransform())

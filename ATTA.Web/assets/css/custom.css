@@ -78,23 +78,31 @@ ul {
 /* Parallax Slider */
 .da-slider {
     background-image: none;
+	background-position: center center !important;
+	height: 400px;
 }
 .da-slide h2, .da-slide p {
     position: static;
     margin-left: 0 !important;
 }
+.da-slide .da-img {
+	top: 40px;
+	margin-left: -10% !important;
+}
 .da-text {    
     top: 100px;
     z-index: 10;
-}
-.da-slide-toleft .da-text, .da-slide-toright .da-text, .da-slide-current .da-text {
-    position: absolute;
 }
 .da-slide .da-text {
     left: 10%;
     opacity: 1;
     width: auto;
     height: auto;
+	position: absolute;
+	display: none;
+}
+.da-slide-toleft .da-text, .da-slide-toright .da-text, .da-slide-current .da-text {
+	display: block;
 }
 .da-slide-fromright .da-text {
 	-webkit-animation: fromRightAnim1 0.6s ease-in 0.8s both;
@@ -131,12 +139,12 @@ ul {
 }
 @media (min-width: 1680px) {
     .da-slide .da-text {
-        margin-left: 7%;
+        margin-left: 13%;
     }
 }
 @media (min-width: 1920px) {
     .da-slide .da-text {
-        margin-left: 12%;
+        margin-left: 19%;
     }
 }
 @media (max-width: 450px) {
@@ -258,3 +266,82 @@ h1 {
     background: 0;
 }
 /* Download End*/
+/* Tables */
+.content table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+.content table tr:first-child {
+	font-weight: bold;
+	background-color: #4765a0;
+	color: #fff;
+	font-size: 14px;
+}
+.content table tr:first-child td {
+	border-bottom: 0;
+}
+.content table td {
+	padding: 8px 12px;
+	border-bottom: 1px solid #ddd;
+	white-space: nowrap;
+}
+/* Tables End*/
+/* Pricing Tables*/
+.pricing-table-v8 .service-block .headline {
+	margin: 0;
+	border-bottom: 0;
+}
+.pricing-table-v8 .service-block h2 {
+	display: block;
+	border-bottom: 0;
+}
+.pricing-table-v8 .service-block > span .dollar {
+	font-size: 20px;
+}
+/* Pricing Tables End*/
+/* Seekapong Start */
+.seekapong-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 6px 0 30px;
+    border-bottom: 1px solid #e4e9f0;
+}
+.seekapong-icon {
+    font-size: 48px;
+    margin-bottom: 4px;
+    color: #324c80;
+}
+.seekapong-header {
+    font-size: 30px;
+    margin-bottom: 22px;
+}
+@media (max-width: 768px) {
+    .seekapong-header {
+        font-size: 28px;
+    }
+}
+.seekapong-badge {
+    display: inline-block;
+    width: 236px;
+    padding: 0 18px;
+}
+@media (max-width: 768px) {
+    .seekapong-badge {
+        width: calc(50% - 2px);
+        padding: 0 7px;
+    }
+}
+/* Seekapong End */
+/* Instagram Start */
+.instagram-follow {
+    margin: 0 12px -8px 0;
+    display: inline-block;
+}
+@media (max-width: 768px) {
+    .instagram-follow {
+        margin-top: -3px;
+    }
+}
+.instagram-follow img {
+    display: inline;
+}
+/*Instagram End */

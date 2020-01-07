@@ -11,7 +11,7 @@
             @Html.Partial("LeftNavigation")
         </div>
         <div class="col-md-9 general-content">
-            @Umbraco.Field("content").WrapHeaders()
+            @Umbraco.Field("content").WrapHeaders().MakeTablesResponsive()
         </div>
     </div>
 </div>
