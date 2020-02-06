@@ -324,6 +324,10 @@ h1 {
     width: 236px;
     padding: 0 18px;
 }
+.seekapong-footer {
+    margin-top: 12px;
+    font-size: 14px;
+}
 @media (max-width: 768px) {
     .seekapong-badge {
         width: calc(50% - 2px);

@@ -223,4 +223,8 @@
 .seekapong-badge .seekapong-playstore-badge {
     max-width: 200px;
 }
+.seekapong-footer {
+    margin-top: 12px;
+    font-size: 14px;
+}
 /* Seekapong End */
